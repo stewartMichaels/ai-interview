@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+:root {
+  --background: #08090c;
+  --foreground: #f4f5f7;
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: rgba(129, 140, 248, 0.35);
+}
+
+.bg-grid {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 44px 44px;
+}
+
+.bg-glow {
+  background: radial-gradient(ellipse 60% 50% at 50% -10%, rgba(99, 102, 241, 0.35), transparent 70%);
+}
+
+/* Only hide the native cursor once the JS cursor has actually mounted, so
+   there's never a moment (or a no-JS / touch fallback) with no cursor at all. */
+.custom-cursor-active,
+.custom-cursor-active * {
+  cursor: none !important;
+}
