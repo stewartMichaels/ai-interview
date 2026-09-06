@@ -22,8 +22,8 @@ const TEAM: Member[] = [
   { name: "Hirokjyoti Sharma", regNo: "MBA/4034/11", image: "/team/hirokjyoti-sharma.jpg" },
   { name: "Stewart Micheals", regNo: "MBA/1078/11", image: "/team/stewart-micheals.jpg" },
   { name: "Anurag Pandey", regNo: "MBA/2016/11", image: "/team/anurag-pandey.jpg" },
-  { name: "Yojan", regNo: null, image: "/team/yojan.jpg" },
-  { name: "Sambhavi Upadayay", regNo: null, image: "/team/sambhavi-upadayay.jpg" },
+  { name: "M V Yojan", regNo: "MBA/4041/11", image: "/team/yojan.jpg" },
+  { name: "Sambhavi Upadayay", regNo: "MBA/2069/11", image: "/team/sambhavi-upadayay.jpg" },
   { name: "Nikita Janiya", regNo: "MBA/2053/1", image: "/team/nikita-janiya.jpg" },
 ];
 
