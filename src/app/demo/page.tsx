@@ -1,4 +1,4 @@
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/NavbarServer";
 import Footer from "@/components/Footer";
 import CallDemo from "@/components/CallDemo";
 import type { Metadata } from "next";

@@ -1,17 +1,17 @@
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/NavbarServer";
 import Hero from "@/components/Hero";
 import ProblemSection from "@/components/ProblemSection";
 import DiscourseSection from "@/components/DiscourseSection";
-import HowItWorks from "@/components/HowItWorks";
-import GuardrailsSection from "@/components/GuardrailsSection";
-import FAQSection from "@/components/FAQSection";
+import ExploreSection from "@/components/ExploreSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 
 // Section order follows the conversion arc deliberately:
 // Hero (attention + offering) -> Problem + Discourse (agitate, grouped together)
-// -> How it works (the fix, positive turn) -> Guardrails (credibility)
-// -> FAQ (remove remaining doubt) -> CTA (closing, all-positive) -> Footer (continuance)
+// -> Explore (paths into How it works / Guardrails / FAQ / Blog, each its own
+// indexable page now) -> Testimonials (credibility, right before the close)
+// -> CTA (closing, all-positive) -> Footer (continuance)
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
@@ -20,9 +20,8 @@ export default function Home() {
         <Hero />
         <ProblemSection />
         <DiscourseSection />
-        <HowItWorks />
-        <GuardrailsSection />
-        <FAQSection />
+        <ExploreSection />
+        <TestimonialsSection />
         <CTASection />
       </main>
       <Footer />

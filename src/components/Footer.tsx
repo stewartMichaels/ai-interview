@@ -15,15 +15,18 @@ export default function Footer() {
           {/* Continuance: a path forward for visitors who aren't ready to convert
               yet, so the page doesn't just dead-end for them. */}
           <nav className="flex flex-wrap items-center justify-center gap-6 text-sm text-zinc-400">
-            <a href="/#how-it-works" className="transition-colors hover:text-white">
+            <Link href="/how-it-works" className="transition-colors hover:text-white">
               How it works
-            </a>
-            <a href="/#guardrails" className="transition-colors hover:text-white">
+            </Link>
+            <Link href="/guardrails" className="transition-colors hover:text-white">
               Guardrails
-            </a>
-            <a href="/#faq" className="transition-colors hover:text-white">
+            </Link>
+            <Link href="/faq" className="transition-colors hover:text-white">
               FAQ
-            </a>
+            </Link>
+            <Link href="/blog" className="transition-colors hover:text-white">
+              Blog
+            </Link>
             <Link href="/team-details" className="transition-colors hover:text-white">
               Team Details
             </Link>
