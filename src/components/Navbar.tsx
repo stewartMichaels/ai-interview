@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
@@ -54,9 +55,14 @@ export default function Navbar({ user = null }: { user?: NavbarUser }) {
           data-cursor="up"
           className="group flex items-center gap-2 font-semibold tracking-tight"
         >
-          <span className="flex h-7 w-7 items-center justify-center rounded-md bg-gradient-to-br from-indigo-400 to-violet-600 text-sm font-bold text-white transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:rotate-6 group-hover:scale-110">
-            S
-          </span>
+          <Image
+            src="/logo.png"
+            alt="StandIn"
+            width={28}
+            height={28}
+            priority
+            className="h-7 w-7 transition-transform duration-300 ease-out group-hover:-translate-y-0.5 group-hover:rotate-12 group-hover:scale-110"
+          />
           <span className="text-white">StandIn</span>
         </Link>
 

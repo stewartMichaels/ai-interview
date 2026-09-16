@@ -1,14 +1,19 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Footer() {
   return (
     <footer className="border-t border-white/10 bg-[#08090c]">
       <div className="mx-auto max-w-6xl px-6 py-10">
         <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
-          <div className="flex items-center gap-2 text-sm text-zinc-500">
-            <span className="flex h-6 w-6 items-center justify-center rounded-md bg-gradient-to-br from-indigo-400 to-violet-600 text-xs font-bold text-white">
-              S
-            </span>
+          <div className="group flex items-center gap-2 text-sm text-zinc-500">
+            <Image
+              src="/logo.png"
+              alt="StandIn"
+              width={24}
+              height={24}
+              className="h-6 w-6 transition-transform duration-300 ease-out group-hover:-translate-y-0.5 group-hover:rotate-12 group-hover:scale-110"
+            />
             <span>StandIn &mdash; your AI, standing in for you.</span>
           </div>
 

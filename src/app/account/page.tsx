@@ -2,6 +2,7 @@ import { redirect } from "next/navigation";
 import Navbar from "@/components/NavbarServer";
 import Footer from "@/components/Footer";
 import AccountForm from "@/components/AccountForm";
+import DeleteAccountSection from "@/components/DeleteAccountSection";
 import { createClient } from "@/lib/supabase/server";
 import type { Metadata } from "next";
 
@@ -44,6 +45,8 @@ export default async function AccountPage() {
           </div>
 
           <AccountForm email={user.email ?? null} initialName={initialName} />
+
+          <DeleteAccountSection email={user.email ?? null} />
         </div>
       </main>
       <Footer />
