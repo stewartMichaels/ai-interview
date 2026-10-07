@@ -22,12 +22,12 @@ export default function FAQSection() {
     <section id="faq" className="border-b border-zinc-900/10 bg-zinc-50">
       <div className="mx-auto max-w-3xl px-6 py-24">
         <div className="text-center">
-          <h2 className="text-sm font-semibold uppercase tracking-widest text-indigo-600">
+          <p className="text-sm font-semibold uppercase tracking-widest text-indigo-600">
             FAQ
-          </h2>
-          <p className="mt-3 text-3xl font-semibold tracking-tight text-zinc-900 sm:text-4xl">
-            Questions people ask first
           </p>
+          <h1 className="mt-3 text-3xl font-semibold tracking-tight text-zinc-900 sm:text-4xl">
+            Questions people ask first
+          </h1>
         </div>
 
         <div className="mt-14 space-y-4">

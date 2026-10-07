@@ -8,7 +8,9 @@ export async function proxy(request: NextRequest) {
 }
 
 export const config = {
+  // Skips static assets and the crawler-facing metadata routes, which never
+  // read the session — no point paying a Supabase round trip on each fetch.
   matcher: [
-    "/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)",
+    "/((?!_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml|llms.txt|opengraph-image|.*\\.(?:svg|png|jpg|jpeg|gif|webp|mp4|webm)$).*)",
   ],
 };

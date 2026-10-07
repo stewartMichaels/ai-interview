@@ -2,8 +2,11 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
 import CustomCursor from "@/components/CustomCursor";
+import { SITE_NAME, SITE_URL } from "@/lib/site";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://stand-in-six.vercel.app";
+const HOME_DESCRIPTION =
+  "StandIn turns your resume and your own words into a phone-callable AI representative for screening calls — grounded strictly in what you provide.";
+
 // Google Ads conversion ID(s) — the "AW-..." tag(s). Supports more than one
 // account reporting on the same site: set a comma-separated list (e.g.
 // "AW-18413726756,AW-99887766"), one per advertiser. Google's own multi-tag
@@ -23,18 +26,12 @@ export const metadata: Metadata = {
     default: "StandIn — The Best AI Interview Online, Grounded in Your Own Words",
     template: "%s",
   },
-  description:
-    "AI interviewers grade rigid formats and mis-transcribe your answers. StandIn is an AI interview application that builds a phone-callable AI representative from your resume and your own words, with strict guardrails against hallucination.",
-  keywords: [
-    "AI Interview Application",
-    "Best AI Interview Online",
-    "AI Interview Online",
-  ],
+  description: HOME_DESCRIPTION,
   openGraph: {
     title: "StandIn — The Best AI Interview Online, Grounded in Your Own Words",
     description:
       "Build a phone-callable AI representative from your resume and your own words — grounded strictly in what you provide.",
-    siteName: "StandIn",
+    siteName: SITE_NAME,
     type: "website",
   },
   twitter: {

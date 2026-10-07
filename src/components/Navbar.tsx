@@ -57,7 +57,7 @@ export default function Navbar({ user = null }: { user?: NavbarUser }) {
         >
           <Image
             src="/logo.png"
-            alt="StandIn"
+            alt=""
             width={28}
             height={28}
             priority

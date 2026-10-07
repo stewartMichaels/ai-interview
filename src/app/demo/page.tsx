@@ -2,11 +2,13 @@ import Navbar from "@/components/NavbarServer";
 import Footer from "@/components/Footer";
 import CallDemo from "@/components/CallDemo";
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Demo call — StandIn",
   description: "See a sample screening call with an AI representative built by StandIn.",
-};
+  path: "/demo",
+});
 
 export default function DemoPage() {
   return (
