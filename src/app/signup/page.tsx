@@ -1,6 +1,8 @@
 import Navbar from "@/components/NavbarServer";
 import Footer from "@/components/Footer";
 import AuthForm from "@/components/AuthForm";
+import { redirect } from "next/navigation";
+import { createClient } from "@/lib/supabase/server";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -8,7 +10,13 @@ export const metadata: Metadata = {
   description: "Create a StandIn account to build your AI representative.",
 };
 
-export default function SignupPage() {
+export default async function SignupPage() {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (user) redirect("/account");
+
   return (
     <div className="flex min-h-screen flex-col">
       <Navbar />

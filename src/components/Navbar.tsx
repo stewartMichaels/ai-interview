@@ -88,7 +88,7 @@ export default function Navbar({ user = null }: { user?: NavbarUser }) {
           )}
 
           <Link
-            href="/demo"
+            href="/signup"
             className="hidden rounded-full bg-zinc-900 px-4 py-2 text-sm font-semibold text-white transition-transform hover:scale-[1.03] sm:block"
           >
             Build my AI rep
@@ -191,7 +191,7 @@ export default function Navbar({ user = null }: { user?: NavbarUser }) {
           </nav>
 
           <Link
-            href="/demo"
+            href="/signup"
             onClick={() => setOpen(false)}
             className="mt-4 block rounded-full bg-zinc-900 px-4 py-2.5 text-center text-sm font-semibold text-white transition-transform hover:scale-[1.02] sm:hidden"
           >

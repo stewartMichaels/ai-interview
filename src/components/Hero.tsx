@@ -1,5 +1,6 @@
 import Link from "next/link";
 import HeroVideo from "./HeroVideo";
+import SampleCallLink from "./SampleCallLink";
 
 export default function Hero() {
   return (
@@ -41,17 +42,14 @@ export default function Hero() {
               two competing buttons. */}
           <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row lg:items-center">
             <Link
-              href="/demo"
+              href="/signup"
               className="rounded-full bg-zinc-900 px-7 py-3.5 text-sm font-semibold text-white transition-transform hover:scale-[1.03]"
             >
               Build your AI representative — free
             </Link>
-            <a
-              href="/demo"
-              className="text-sm font-medium text-zinc-700 underline decoration-zinc-900/20 underline-offset-4 transition-colors hover:text-zinc-900"
-            >
+            <SampleCallLink className="text-sm font-medium text-zinc-700 underline decoration-zinc-900/20 underline-offset-4 transition-colors hover:text-zinc-900">
               or listen to a sample call →
-            </a>
+            </SampleCallLink>
           </div>
 
           {/* Continuance: tells the visitor exactly what happens right after they click. */}

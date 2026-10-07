@@ -1,6 +1,9 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+
+/** Dispatched on `window` by anything that wants the sample call to begin (e.g. the hero link). */
+export const START_CALL_EVENT = "standin:start-call";
 
 type Line = {
   speaker: "recruiter" | "ai";
@@ -63,12 +66,27 @@ export default function CallDemo() {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: "smooth" });
   }, [visibleLines]);
 
-  const startCall = () => {
+  const statusRef = useRef(status);
+  useEffect(() => {
+    statusRef.current = status;
+  }, [status]);
+
+  const startCall = useCallback(() => {
     setVisibleLines([]);
     setSeconds(0);
     setStatus("calling");
     setTimeout(() => setStatus("connected"), 1400);
-  };
+  }, []);
+
+  // Lets other parts of the page (the hero's "listen to a sample call" link)
+  // kick off the call. Ignored if a call is already in progress.
+  useEffect(() => {
+    const onStart = () => {
+      if (statusRef.current === "idle" || statusRef.current === "ended") startCall();
+    };
+    window.addEventListener(START_CALL_EVENT, onStart);
+    return () => window.removeEventListener(START_CALL_EVENT, onStart);
+  }, [startCall]);
 
   const endCall = () => setStatus("ended");
 

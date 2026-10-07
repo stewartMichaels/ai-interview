@@ -15,7 +15,7 @@ export default function CTASection() {
         {/* Closing: a single, unambiguous action. */}
         <div className="mt-8 flex flex-col items-center justify-center gap-4">
           <Link
-            href="/demo"
+            href="/signup"
             className="rounded-full bg-zinc-900 px-7 py-3.5 text-sm font-semibold text-white transition-transform hover:scale-[1.03]"
           >
             Build my AI representative — free
