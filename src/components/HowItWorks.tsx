@@ -27,16 +27,16 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section id="how-it-works" className="border-b border-white/10 bg-[#08090c]">
+    <section id="how-it-works" className="border-b border-zinc-900/10 bg-white">
       <div className="mx-auto max-w-6xl px-6 py-24">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-sm font-semibold uppercase tracking-widest text-indigo-400">
+          <h2 className="text-sm font-semibold uppercase tracking-widest text-indigo-600">
             The fix
           </h2>
-          <p className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+          <p className="mt-3 text-3xl font-semibold tracking-tight text-zinc-900 sm:text-4xl">
             From resume to shareable call in four steps
           </p>
-          <p className="mt-4 text-zinc-400">
+          <p className="mt-4 text-zinc-600">
             No format to perform for, no transcript to fight — just your own
             experience, in your own words, ready whenever a recruiter calls.
           </p>
@@ -46,13 +46,13 @@ export default function HowItWorks() {
           {steps.map((s, i) => (
             <div key={s.step} className="relative">
               <div className="flex items-center gap-3">
-                <span className="text-sm font-mono text-zinc-600">{s.step}</span>
-                <div className="h-px flex-1 bg-white/10" />
+                <span className="text-sm font-mono text-zinc-500">{s.step}</span>
+                <div className="h-px flex-1 bg-zinc-900/10" />
               </div>
-              <h3 className="mt-4 text-lg font-semibold text-white">{s.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-zinc-400">{s.body}</p>
+              <h3 className="mt-4 text-lg font-semibold text-zinc-900">{s.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-zinc-600">{s.body}</p>
               {i < steps.length - 1 && (
-                <div className="mt-8 hidden h-px w-full bg-gradient-to-r from-white/10 to-transparent lg:block" />
+                <div className="mt-8 hidden h-px w-full bg-gradient-to-r from-zinc-900/10 to-transparent lg:block" />
               )}
             </div>
           ))}

@@ -49,7 +49,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className="h-full antialiased">
       <body
-        className="min-h-full flex flex-col bg-[#08090c] text-zinc-100"
+        className="min-h-full flex flex-col bg-white text-zinc-900"
         suppressHydrationWarning
       >
         {GOOGLE_ADS_IDS.length > 0 && (

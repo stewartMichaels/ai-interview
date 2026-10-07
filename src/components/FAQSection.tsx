@@ -19,13 +19,13 @@ const faqs = [
 
 export default function FAQSection() {
   return (
-    <section id="faq" className="border-b border-white/10 bg-[#0b0c10]">
+    <section id="faq" className="border-b border-zinc-900/10 bg-zinc-50">
       <div className="mx-auto max-w-3xl px-6 py-24">
         <div className="text-center">
-          <h2 className="text-sm font-semibold uppercase tracking-widest text-indigo-400">
+          <h2 className="text-sm font-semibold uppercase tracking-widest text-indigo-600">
             FAQ
           </h2>
-          <p className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+          <p className="mt-3 text-3xl font-semibold tracking-tight text-zinc-900 sm:text-4xl">
             Questions people ask first
           </p>
         </div>
@@ -34,22 +34,22 @@ export default function FAQSection() {
           {faqs.map((f) => (
             <details
               key={f.q}
-              className="group rounded-2xl border border-white/10 bg-white/[0.03] p-5 open:bg-white/[0.05]"
+              className="group rounded-2xl border border-zinc-900/10 bg-zinc-900/[0.03] p-5 open:bg-zinc-900/[0.05]"
             >
-              <summary className="flex cursor-pointer list-none items-center justify-between text-sm font-semibold text-white">
+              <summary className="flex cursor-pointer list-none items-center justify-between text-sm font-semibold text-zinc-900">
                 {f.q}
                 <span className="ml-4 text-zinc-500 transition-transform group-open:rotate-45">
                   +
                 </span>
               </summary>
-              <p className="mt-3 text-sm leading-relaxed text-zinc-400">{f.a}</p>
+              <p className="mt-3 text-sm leading-relaxed text-zinc-600">{f.a}</p>
             </details>
           ))}
         </div>
 
-        <p className="mt-10 text-center text-sm text-zinc-400">
+        <p className="mt-10 text-center text-sm text-zinc-600">
           Still have a question?{" "}
-          <a href="/demo" className="font-medium text-white underline decoration-white/20 underline-offset-4">
+          <a href="/demo" className="font-medium text-zinc-900 underline decoration-zinc-900/20 underline-offset-4">
             Listen to a sample call
           </a>{" "}
           to see it in action first.

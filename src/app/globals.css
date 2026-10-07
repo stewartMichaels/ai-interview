@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #08090c;
-  --foreground: #f4f5f7;
+  --background: #ffffff;
+  --foreground: #18181b;
   --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
     "Helvetica Neue", Arial, sans-serif;
   --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
@@ -22,18 +22,18 @@ body {
 }
 
 ::selection {
-  background: rgba(129, 140, 248, 0.35);
+  background: rgba(99, 102, 241, 0.25);
 }
 
 .bg-grid {
   background-image:
-    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+    linear-gradient(to right, rgba(24, 24, 27, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(24, 24, 27, 0.05) 1px, transparent 1px);
   background-size: 44px 44px;
 }
 
 .bg-glow {
-  background: radial-gradient(ellipse 60% 50% at 50% -10%, rgba(99, 102, 241, 0.35), transparent 70%);
+  background: radial-gradient(ellipse 60% 50% at 50% -10%, rgba(99, 102, 241, 0.16), transparent 70%);
 }
 
 /* Only hide the native cursor once the JS cursor has actually mounted, so

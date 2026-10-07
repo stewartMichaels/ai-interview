@@ -2,12 +2,12 @@ import Link from "next/link";
 
 export default function CTASection() {
   return (
-    <section className="bg-glow relative overflow-hidden bg-[#0b0c10]">
+    <section className="bg-glow relative overflow-hidden bg-zinc-50">
       <div className="mx-auto max-w-4xl px-6 py-24 text-center">
-        <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+        <h2 className="text-3xl font-semibold tracking-tight text-zinc-900 sm:text-4xl">
           Let your experience speak for itself
         </h2>
-        <p className="mx-auto mt-4 max-w-xl text-zinc-400">
+        <p className="mx-auto mt-4 max-w-xl text-zinc-600">
           Build your AI representative in minutes, review every guardrail yourself,
           and share one link for your next screening call.
         </p>
@@ -16,7 +16,7 @@ export default function CTASection() {
         <div className="mt-8 flex flex-col items-center justify-center gap-4">
           <Link
             href="/demo"
-            className="rounded-full bg-white px-7 py-3.5 text-sm font-semibold text-black transition-transform hover:scale-[1.03]"
+            className="rounded-full bg-zinc-900 px-7 py-3.5 text-sm font-semibold text-white transition-transform hover:scale-[1.03]"
           >
             Build my AI representative — free
           </Link>

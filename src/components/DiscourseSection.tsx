@@ -18,16 +18,16 @@ const posts = [
 
 export default function DiscourseSection() {
   return (
-    <section className="border-b border-white/10 bg-[#08090c]">
+    <section className="border-b border-zinc-900/10 bg-white">
       <div className="mx-auto max-w-6xl px-6 py-24">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-sm font-semibold uppercase tracking-widest text-indigo-400">
+          <h2 className="text-sm font-semibold uppercase tracking-widest text-indigo-600">
             Already public discourse
           </h2>
-          <p className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+          <p className="mt-3 text-3xl font-semibold tracking-tight text-zinc-900 sm:text-4xl">
             You&apos;re not imagining it
           </p>
-          <p className="mt-4 text-zinc-400">
+          <p className="mt-4 text-zinc-600">
             This frustration is showing up everywhere candidates talk about their job
             search — which is exactly the gap StandIn is built to close.
           </p>
@@ -37,9 +37,9 @@ export default function DiscourseSection() {
           {posts.map((p) => (
             <figure
               key={p.handle}
-              className="rounded-2xl border border-white/10 bg-white/[0.03] p-6"
+              className="rounded-2xl border border-zinc-900/10 bg-zinc-900/[0.03] p-6"
             >
-              <blockquote className="text-sm leading-relaxed text-zinc-300">
+              <blockquote className="text-sm leading-relaxed text-zinc-700">
                 &ldquo;{p.body}&rdquo;
               </blockquote>
               <figcaption className="mt-4 text-xs font-medium text-zinc-500">
@@ -48,7 +48,7 @@ export default function DiscourseSection() {
             </figure>
           ))}
         </div>
-        <p className="mt-6 text-center text-xs text-zinc-600">
+        <p className="mt-6 text-center text-xs text-zinc-500">
           Illustrative examples of widely echoed sentiment, not verbatim quotes from
           real accounts.
         </p>

@@ -101,26 +101,26 @@ export default function AuthForm({ mode, next = "/" }: { mode: Mode; next?: stri
   };
 
   return (
-    <div className="mx-auto w-full max-w-sm rounded-2xl border border-white/10 bg-white/[0.03] p-8">
+    <div className="mx-auto w-full max-w-sm rounded-2xl border border-zinc-900/10 bg-zinc-900/[0.03] p-8">
       <button
         type="button"
         onClick={handleGoogle}
         disabled={googleLoading}
-        className="flex w-full items-center justify-center gap-3 rounded-full border border-white/15 bg-white px-4 py-3 text-sm font-semibold text-black transition-transform hover:scale-[1.02] disabled:opacity-60"
+        className="flex w-full items-center justify-center gap-3 rounded-full border border-zinc-300 bg-white px-4 py-3 text-sm font-semibold text-black transition-transform hover:scale-[1.02] disabled:opacity-60"
       >
         {GOOGLE_ICON}
         {googleLoading ? "Redirecting…" : "Continue with Google"}
       </button>
 
       <div className="my-6 flex items-center gap-3 text-xs text-zinc-500">
-        <div className="h-px flex-1 bg-white/10" />
+        <div className="h-px flex-1 bg-zinc-900/10" />
         or with email
-        <div className="h-px flex-1 bg-white/10" />
+        <div className="h-px flex-1 bg-zinc-900/10" />
       </div>
 
       <form onSubmit={handleSubmit} className="flex flex-col gap-4">
         <div>
-          <label htmlFor="email" className="mb-1.5 block text-xs font-medium text-zinc-400">
+          <label htmlFor="email" className="mb-1.5 block text-xs font-medium text-zinc-600">
             Email
           </label>
           <input
@@ -130,13 +130,13 @@ export default function AuthForm({ mode, next = "/" }: { mode: Mode; next?: stri
             autoComplete="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="w-full rounded-lg border border-white/10 bg-white/5 px-3.5 py-2.5 text-sm text-white placeholder:text-zinc-600 focus:border-indigo-400 focus:outline-none"
+            className="w-full rounded-lg border border-zinc-900/10 bg-zinc-900/5 px-3.5 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-500 focus:border-indigo-400 focus:outline-none"
             placeholder="you@example.com"
           />
         </div>
 
         <div>
-          <label htmlFor="password" className="mb-1.5 block text-xs font-medium text-zinc-400">
+          <label htmlFor="password" className="mb-1.5 block text-xs font-medium text-zinc-600">
             Password
           </label>
           <input
@@ -147,18 +147,18 @@ export default function AuthForm({ mode, next = "/" }: { mode: Mode; next?: stri
             autoComplete={mode === "login" ? "current-password" : "new-password"}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full rounded-lg border border-white/10 bg-white/5 px-3.5 py-2.5 text-sm text-white placeholder:text-zinc-600 focus:border-indigo-400 focus:outline-none"
+            className="w-full rounded-lg border border-zinc-900/10 bg-zinc-900/5 px-3.5 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-500 focus:border-indigo-400 focus:outline-none"
             placeholder="••••••••"
           />
         </div>
 
-        {error && <p className="text-sm text-red-400">{error}</p>}
-        {message && <p className="text-sm text-emerald-400">{message}</p>}
+        {error && <p className="text-sm text-red-600">{error}</p>}
+        {message && <p className="text-sm text-emerald-600">{message}</p>}
 
         <button
           type="submit"
           disabled={loading}
-          className="mt-1 rounded-full bg-white px-4 py-3 text-sm font-semibold text-black transition-transform hover:scale-[1.02] disabled:opacity-60"
+          className="mt-1 rounded-full bg-zinc-900 px-4 py-3 text-sm font-semibold text-white transition-transform hover:scale-[1.02] disabled:opacity-60"
         >
           {loading
             ? mode === "login"
@@ -174,14 +174,14 @@ export default function AuthForm({ mode, next = "/" }: { mode: Mode; next?: stri
         {mode === "login" ? (
           <>
             Don&apos;t have an account?{" "}
-            <Link href="/signup" className="font-medium text-white underline decoration-white/20 underline-offset-4">
+            <Link href="/signup" className="font-medium text-zinc-900 underline decoration-zinc-900/20 underline-offset-4">
               Sign up
             </Link>
           </>
         ) : (
           <>
             Already have an account?{" "}
-            <Link href="/login" className="font-medium text-white underline decoration-white/20 underline-offset-4">
+            <Link href="/login" className="font-medium text-zinc-900 underline decoration-zinc-900/20 underline-offset-4">
               Log in
             </Link>
           </>

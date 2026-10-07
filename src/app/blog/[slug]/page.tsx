@@ -54,11 +54,11 @@ export default async function BlogPostPage({
   return (
     <div className="flex min-h-screen flex-col">
       <Navbar />
-      <main className="flex-1 bg-grid bg-glow border-b border-white/10">
+      <main className="flex-1 bg-grid bg-glow border-b border-zinc-900/10">
         <article className="mx-auto max-w-2xl px-6 py-20">
           <Link
             href="/blog"
-            className="text-sm font-medium text-zinc-400 transition-colors hover:text-white"
+            className="text-sm font-medium text-zinc-600 transition-colors hover:text-zinc-900"
           >
             ← Back to blog
           </Link>
@@ -75,11 +75,11 @@ export default async function BlogPostPage({
             <span>{post.readingTime}</span>
           </div>
 
-          <h1 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+          <h1 className="mt-3 text-3xl font-semibold tracking-tight text-zinc-900 sm:text-4xl">
             {post.title}
           </h1>
 
-          <div className="mt-10 border-t border-white/10 pt-10">
+          <div className="mt-10 border-t border-zinc-900/10 pt-10">
             <BlogContent content={post.content} />
           </div>
         </article>

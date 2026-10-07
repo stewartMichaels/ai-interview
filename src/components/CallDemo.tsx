@@ -77,12 +77,12 @@ export default function CallDemo() {
 
   return (
     <div className="mx-auto w-full max-w-md">
-      <div className="overflow-hidden rounded-3xl border border-white/10 bg-[#0e0f14] shadow-2xl shadow-black/40">
-        <div className="flex flex-col items-center gap-3 border-b border-white/10 bg-gradient-to-b from-white/[0.04] to-transparent px-6 py-8">
+      <div className="overflow-hidden rounded-3xl border border-zinc-900/10 bg-white shadow-2xl shadow-zinc-900/10">
+        <div className="flex flex-col items-center gap-3 border-b border-zinc-900/10 bg-gradient-to-b from-zinc-900/[0.04] to-transparent px-6 py-8">
           <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-indigo-400 to-violet-600 text-xl font-bold text-white">
             JD
           </div>
-          <p className="text-sm font-semibold text-white">Jordan Diaz &mdash; AI Representative</p>
+          <p className="text-sm font-semibold text-zinc-900">Jordan Diaz &mdash; AI Representative</p>
           <p className="text-xs text-zinc-500">
             {status === "idle" && "Ready to call"}
             {status === "calling" && "Calling…"}
@@ -93,7 +93,7 @@ export default function CallDemo() {
 
         <div ref={scrollRef} className="flex h-80 flex-col gap-3 overflow-y-auto px-5 py-5">
           {status === "idle" && (
-            <p className="m-auto max-w-[200px] text-center text-xs text-zinc-600">
+            <p className="m-auto max-w-[200px] text-center text-xs text-zinc-500">
               Press call to simulate a screening conversation with this sample AI
               representative.
             </p>
@@ -117,7 +117,7 @@ export default function CallDemo() {
                 className={`max-w-[85%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed ${
                   line.speaker === "ai"
                     ? "bg-gradient-to-br from-indigo-500/90 to-violet-600/90 text-white"
-                    : "bg-white/[0.06] text-zinc-200"
+                    : "bg-zinc-900/[0.06] text-zinc-800"
                 }`}
               >
                 {line.text}
@@ -125,13 +125,13 @@ export default function CallDemo() {
             </div>
           ))}
           {status === "ended" && (
-            <p className="mt-2 text-center text-xs text-zinc-600">
+            <p className="mt-2 text-center text-xs text-zinc-500">
               Call ended. Full transcript saved to Jordan&apos;s account.
             </p>
           )}
         </div>
 
-        <div className="flex items-center justify-center gap-4 border-t border-white/10 px-6 py-5">
+        <div className="flex items-center justify-center gap-4 border-t border-zinc-900/10 px-6 py-5">
           {status === "idle" || status === "ended" ? (
             <button
               onClick={startCall}
@@ -150,7 +150,7 @@ export default function CallDemo() {
         </div>
       </div>
 
-      <p className="mt-4 text-center text-xs text-zinc-600">
+      <p className="mt-4 text-center text-xs text-zinc-500">
         This is a scripted preview, not a live model or phone connection.
       </p>
     </div>

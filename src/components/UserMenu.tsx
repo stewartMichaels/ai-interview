@@ -54,12 +54,12 @@ export default function UserMenu({ user }: { user: MenuUser }) {
         onClick={() => setOpen((v) => !v)}
         aria-haspopup="menu"
         aria-expanded={open}
-        className="flex items-center gap-2 rounded-full border border-white/10 bg-white/5 py-1 pl-1 pr-3 transition-colors hover:border-white/20 hover:bg-white/10"
+        className="flex items-center gap-2 rounded-full border border-zinc-900/10 bg-zinc-900/5 py-1 pl-1 pr-3 transition-colors hover:border-zinc-900/20 hover:bg-zinc-900/10"
       >
         <span className="flex h-7 w-7 items-center justify-center rounded-full bg-gradient-to-br from-indigo-400 to-violet-600 text-xs font-bold text-white">
           {initial(user)}
         </span>
-        <span className="max-w-[9rem] truncate text-sm font-medium text-zinc-200">
+        <span className="max-w-[9rem] truncate text-sm font-medium text-zinc-800">
           {user.name ?? user.email}
         </span>
         <svg
@@ -78,18 +78,18 @@ export default function UserMenu({ user }: { user: MenuUser }) {
       {open && (
         <div
           role="menu"
-          className="absolute right-0 top-full z-50 mt-2 w-56 overflow-hidden rounded-2xl border border-white/10 bg-[#111217] p-1.5 shadow-xl shadow-black/40"
+          className="absolute right-0 top-full z-50 mt-2 w-56 overflow-hidden rounded-2xl border border-zinc-900/10 bg-white p-1.5 shadow-xl shadow-zinc-900/10"
         >
           <div className="px-3 py-2.5">
-            <p className="truncate text-sm font-semibold text-white">{user.name ?? "Your account"}</p>
+            <p className="truncate text-sm font-semibold text-zinc-900">{user.name ?? "Your account"}</p>
             <p className="truncate text-xs text-zinc-500">{user.email}</p>
           </div>
-          <div className="h-px bg-white/10" />
+          <div className="h-px bg-zinc-900/10" />
           <Link
             href="/account"
             role="menuitem"
             onClick={() => setOpen(false)}
-            className="flex items-center gap-2.5 rounded-xl px-3 py-2.5 text-sm text-zinc-200 transition-colors hover:bg-white/5 hover:text-white"
+            className="flex items-center gap-2.5 rounded-xl px-3 py-2.5 text-sm text-zinc-800 transition-colors hover:bg-zinc-900/5 hover:text-zinc-900"
           >
             <svg viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4 text-zinc-500">
               <path
@@ -104,7 +104,7 @@ export default function UserMenu({ user }: { user: MenuUser }) {
             type="button"
             role="menuitem"
             onClick={handleLogout}
-            className="flex w-full items-center gap-2.5 rounded-xl px-3 py-2.5 text-left text-sm text-zinc-200 transition-colors hover:bg-white/5 hover:text-white"
+            className="flex w-full items-center gap-2.5 rounded-xl px-3 py-2.5 text-left text-sm text-zinc-800 transition-colors hover:bg-zinc-900/5 hover:text-zinc-900"
           >
             <svg viewBox="0 0 20 20" fill="currentColor" className="h-4 w-4 text-zinc-500">
               <path

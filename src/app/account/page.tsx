@@ -30,16 +30,16 @@ export default async function AccountPage() {
   return (
     <div className="flex min-h-screen flex-col">
       <Navbar />
-      <main className="flex-1 bg-grid bg-glow border-b border-white/10">
+      <main className="flex-1 bg-grid bg-glow border-b border-zinc-900/10">
         <div className="mx-auto max-w-2xl px-6 py-20">
           <div className="mb-10">
-            <p className="text-sm font-semibold uppercase tracking-widest text-indigo-400">
+            <p className="text-sm font-semibold uppercase tracking-widest text-indigo-600">
               Account
             </p>
-            <p className="mt-3 text-3xl font-semibold tracking-tight text-white">
+            <p className="mt-3 text-3xl font-semibold tracking-tight text-zinc-900">
               Your profile
             </p>
-            <p className="mt-2 text-sm text-zinc-400">
+            <p className="mt-2 text-sm text-zinc-600">
               This is how you&apos;ll appear across StandIn.
             </p>
           </div>

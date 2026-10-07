@@ -29,13 +29,13 @@ const cards = [
 
 export default function ExploreSection() {
   return (
-    <section className="border-b border-white/10 bg-[#08090c]">
+    <section className="border-b border-zinc-900/10 bg-white">
       <div className="mx-auto max-w-6xl px-6 py-24">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-sm font-semibold uppercase tracking-widest text-indigo-400">
+          <h2 className="text-sm font-semibold uppercase tracking-widest text-indigo-600">
             Explore
           </h2>
-          <p className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+          <p className="mt-3 text-3xl font-semibold tracking-tight text-zinc-900 sm:text-4xl">
             Everything else you&apos;d want to know
           </p>
         </div>
@@ -45,14 +45,14 @@ export default function ExploreSection() {
             <Link
               key={c.href}
               href={c.href}
-              className="group flex flex-col rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition-colors hover:border-white/20"
+              className="group flex flex-col rounded-2xl border border-zinc-900/10 bg-zinc-900/[0.03] p-6 transition-colors hover:border-zinc-900/20"
             >
-              <span className="text-xs font-semibold uppercase tracking-widest text-indigo-400">
+              <span className="text-xs font-semibold uppercase tracking-widest text-indigo-600">
                 {c.label}
               </span>
-              <h3 className="mt-3 text-base font-semibold text-white">{c.title}</h3>
-              <p className="mt-2 flex-1 text-sm leading-relaxed text-zinc-400">{c.body}</p>
-              <span className="mt-4 text-sm font-medium text-zinc-300 transition-colors group-hover:text-white">
+              <h3 className="mt-3 text-base font-semibold text-zinc-900">{c.title}</h3>
+              <p className="mt-2 flex-1 text-sm leading-relaxed text-zinc-600">{c.body}</p>
+              <span className="mt-4 text-sm font-medium text-zinc-700 transition-colors group-hover:text-zinc-900">
                 Read more →
               </span>
             </Link>

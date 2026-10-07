@@ -23,16 +23,16 @@ const problems = [
 
 export default function ProblemSection() {
   return (
-    <section id="problem" className="border-b border-white/10 bg-[#0b0c10]">
+    <section id="problem" className="border-b border-zinc-900/10 bg-zinc-50">
       <div className="mx-auto max-w-6xl px-6 py-24">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-sm font-semibold uppercase tracking-widest text-indigo-400">
+          <h2 className="text-sm font-semibold uppercase tracking-widest text-indigo-600">
             The problem
           </h2>
-          <p className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+          <p className="mt-3 text-3xl font-semibold tracking-tight text-zinc-900 sm:text-4xl">
             AI-first interviewing isn&apos;t working for candidates
           </p>
-          <p className="mt-4 text-zinc-400">
+          <p className="mt-4 text-zinc-600">
             The first round of hiring has quietly become AI-vs-human — and the human
             usually loses to the format, not the questions.
           </p>
@@ -42,10 +42,10 @@ export default function ProblemSection() {
           {problems.map((p) => (
             <div
               key={p.title}
-              className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 transition-colors hover:border-white/20"
+              className="rounded-2xl border border-zinc-900/10 bg-zinc-900/[0.03] p-6 transition-colors hover:border-zinc-900/20"
             >
-              <h3 className="text-lg font-semibold text-white">{p.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-zinc-400">{p.body}</p>
+              <h3 className="text-lg font-semibold text-zinc-900">{p.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-zinc-600">{p.body}</p>
             </div>
           ))}
         </div>

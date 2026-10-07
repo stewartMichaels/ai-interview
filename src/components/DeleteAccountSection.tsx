@@ -39,8 +39,8 @@ export default function DeleteAccountSection({ email }: { email: string | null }
 
   return (
     <div className="mt-10 rounded-2xl border border-red-500/20 bg-red-500/[0.03] p-6 sm:p-8">
-      <h2 className="text-sm font-semibold text-red-400">Danger zone</h2>
-      <p className="mt-2 text-sm leading-relaxed text-zinc-400">
+      <h2 className="text-sm font-semibold text-red-600">Danger zone</h2>
+      <p className="mt-2 text-sm leading-relaxed text-zinc-600">
         Permanently delete your StandIn account. This removes your login and everything
         tied to it, and can&apos;t be undone.
       </p>
@@ -49,14 +49,14 @@ export default function DeleteAccountSection({ email }: { email: string | null }
         <button
           type="button"
           onClick={() => setOpen(true)}
-          className="mt-4 rounded-full border border-red-500/30 px-5 py-2.5 text-sm font-semibold text-red-400 transition-colors hover:bg-red-500/10"
+          className="mt-4 rounded-full border border-red-500/30 px-5 py-2.5 text-sm font-semibold text-red-600 transition-colors hover:bg-red-500/10"
         >
           Delete my account
         </button>
       ) : (
         <div className="mt-4 space-y-3">
-          <p className="text-sm text-zinc-400">
-            Type <span className="font-semibold text-white">{email}</span> to confirm.
+          <p className="text-sm text-zinc-600">
+            Type <span className="font-semibold text-zinc-900">{email}</span> to confirm.
           </p>
           <input
             type="text"
@@ -64,10 +64,10 @@ export default function DeleteAccountSection({ email }: { email: string | null }
             onChange={(e) => setConfirmText(e.target.value)}
             placeholder={email ?? ""}
             autoComplete="off"
-            className="w-full rounded-lg border border-white/10 bg-white/5 px-3.5 py-2.5 text-sm text-white placeholder:text-zinc-600 focus:border-red-400 focus:outline-none"
+            className="w-full rounded-lg border border-zinc-900/10 bg-zinc-900/5 px-3.5 py-2.5 text-sm text-zinc-900 placeholder:text-zinc-500 focus:border-red-400 focus:outline-none"
           />
 
-          {error && <p className="text-sm text-red-400">{error}</p>}
+          {error && <p className="text-sm text-red-600">{error}</p>}
 
           <div className="flex gap-3">
             <button
@@ -82,7 +82,7 @@ export default function DeleteAccountSection({ email }: { email: string | null }
               type="button"
               onClick={reset}
               disabled={loading}
-              className="rounded-full border border-white/15 px-5 py-2.5 text-sm font-semibold text-zinc-300 transition-colors hover:bg-white/5 disabled:opacity-50"
+              className="rounded-full border border-zinc-900/15 px-5 py-2.5 text-sm font-semibold text-zinc-700 transition-colors hover:bg-zinc-900/5 disabled:opacity-50"
             >
               Cancel
             </button>

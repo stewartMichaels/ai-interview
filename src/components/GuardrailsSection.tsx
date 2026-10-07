@@ -23,23 +23,23 @@ const guardrails = [
 
 export default function GuardrailsSection() {
   return (
-    <section id="guardrails" className="border-b border-white/10 bg-[#0b0c10]">
+    <section id="guardrails" className="border-b border-zinc-900/10 bg-zinc-50">
       <div className="mx-auto max-w-6xl px-6 py-24">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
           <div>
-            <h2 className="text-sm font-semibold uppercase tracking-widest text-indigo-400">
+            <h2 className="text-sm font-semibold uppercase tracking-widest text-indigo-600">
               Guardrails
             </h2>
-            <p className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+            <p className="mt-3 text-3xl font-semibold tracking-tight text-zinc-900 sm:text-4xl">
               It only knows what you told it. Nothing more.
             </p>
-            <p className="mt-4 text-zinc-400">
+            <p className="mt-4 text-zinc-600">
               The whole point is trust in the other direction too: recruiters need
               confidence that your AI representative isn&apos;t embellishing, and you need
               confidence it won&apos;t misrepresent you. Both are enforced at the model
               level, not just promised in copy.
             </p>
-            <p className="mt-4 text-zinc-400">
+            <p className="mt-4 text-zinc-600">
               You&apos;ll see every one of these settings — and a preview of how your
               representative actually answers — before your link ever goes live.
             </p>
@@ -47,9 +47,9 @@ export default function GuardrailsSection() {
 
           <div className="grid gap-5 sm:grid-cols-2">
             {guardrails.map((g) => (
-              <div key={g.title} className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
-                <h3 className="text-sm font-semibold text-white">{g.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-zinc-400">{g.body}</p>
+              <div key={g.title} className="rounded-2xl border border-zinc-900/10 bg-zinc-900/[0.03] p-5">
+                <h3 className="text-sm font-semibold text-zinc-900">{g.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-zinc-600">{g.body}</p>
               </div>
             ))}
           </div>

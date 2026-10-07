@@ -41,7 +41,7 @@ function renderInline(text: string) {
   return parts.map((part, i) => {
     if (part.startsWith("**") && part.endsWith("**")) {
       return (
-        <strong key={i} className="font-semibold text-white">
+        <strong key={i} className="font-semibold text-zinc-900">
           {part.slice(2, -2)}
         </strong>
       );
@@ -60,7 +60,7 @@ export default function BlogContent({ content }: { content: string }) {
           return (
             <h2
               key={i}
-              className="mt-10 text-xl font-semibold tracking-tight text-white first:mt-0"
+              className="mt-10 text-xl font-semibold tracking-tight text-zinc-900 first:mt-0"
             >
               {block.text}
             </h2>
@@ -70,7 +70,7 @@ export default function BlogContent({ content }: { content: string }) {
           return (
             <ul key={i} className="mt-4 space-y-2.5">
               {block.items.map((item, j) => (
-                <li key={j} className="flex gap-2.5 text-sm leading-relaxed text-zinc-400">
+                <li key={j} className="flex gap-2.5 text-sm leading-relaxed text-zinc-600">
                   <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-indigo-400" />
                   <span>{renderInline(item)}</span>
                 </li>
@@ -79,7 +79,7 @@ export default function BlogContent({ content }: { content: string }) {
           );
         }
         return (
-          <p key={i} className="mt-4 text-sm leading-relaxed text-zinc-400">
+          <p key={i} className="mt-4 text-sm leading-relaxed text-zinc-600">
             {renderInline(block.text)}
           </p>
         );

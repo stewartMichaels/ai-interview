@@ -31,16 +31,16 @@ export default function TeamDetailsPage() {
   return (
     <div className="flex min-h-screen flex-col">
       <Navbar />
-      <main className="flex-1 bg-grid bg-glow border-b border-white/10">
+      <main className="flex-1 bg-grid bg-glow border-b border-zinc-900/10">
         <div className="mx-auto max-w-6xl px-6 py-20">
           <div className="mx-auto max-w-2xl text-center">
-            <h1 className="text-sm font-semibold uppercase tracking-widest text-indigo-400">
+            <h1 className="text-sm font-semibold uppercase tracking-widest text-indigo-600">
               Group 8
             </h1>
-            <p className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+            <p className="mt-3 text-3xl font-semibold tracking-tight text-zinc-900 sm:text-4xl">
               Team Details
             </p>
-            <p className="mt-4 text-zinc-400">
+            <p className="mt-4 text-zinc-600">
               The team behind the StandIn concept project.
             </p>
           </div>
@@ -49,10 +49,10 @@ export default function TeamDetailsPage() {
             {TEAM.map((member) => (
               <div
                 key={member.name}
-                className="flex flex-col items-center rounded-2xl border border-white/10 bg-white/[0.03] p-6 text-center transition-colors hover:border-white/20"
+                className="flex flex-col items-center rounded-2xl border border-zinc-900/10 bg-zinc-900/[0.03] p-6 text-center transition-colors hover:border-zinc-900/20"
               >
                 <TeamAvatar name={member.name} src={member.image} />
-                <p className="mt-4 text-sm font-semibold text-white">{member.name}</p>
+                <p className="mt-4 text-sm font-semibold text-zinc-900">{member.name}</p>
                 <p className="mt-1 text-xs text-zinc-500">
                   {member.regNo ?? "Reg. no. TBD"}
                 </p>

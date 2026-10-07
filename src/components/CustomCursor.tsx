@@ -77,7 +77,7 @@ export default function CustomCursor() {
     <>
       <div
         ref={dotRef}
-        className={`pointer-events-none fixed left-0 top-0 z-[999] h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-white transition-opacity duration-150 ${
+        className={`pointer-events-none fixed left-0 top-0 z-[999] h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-zinc-900 transition-opacity duration-150 ${
           visible ? "opacity-100" : "opacity-0"
         }`}
       />
@@ -87,14 +87,14 @@ export default function CustomCursor() {
           visible ? "opacity-100" : "opacity-0"
         } ${
           variant === "up"
-            ? "h-11 w-11 border-indigo-300 bg-indigo-500/20"
+            ? "h-11 w-11 border-indigo-500 bg-indigo-500/20"
             : variant === "link"
-              ? "h-9 w-9 border-white/70 bg-white/10"
-              : "h-7 w-7 border-white/30 bg-transparent"
+              ? "h-9 w-9 border-zinc-900/70 bg-zinc-900/10"
+              : "h-7 w-7 border-zinc-900/30 bg-transparent"
         }`}
       >
         {variant === "up" && (
-          <svg viewBox="0 0 20 20" fill="none" className="h-4 w-4 text-indigo-200">
+          <svg viewBox="0 0 20 20" fill="none" className="h-4 w-4 text-indigo-600">
             <path
               d="M10 15V5M10 5L5 10M10 5L15 10"
               stroke="currentColor"
