@@ -1,22 +1,11 @@
-import { createClient } from "@/lib/supabase/server";
 import Navbar from "./Navbar";
 
 /**
- * Server-side wrapper that looks up the current session and hands it to the
- * (client) Navbar. Every page renders this instead of Navbar directly, so
- * login state is correct on first paint rather than flashing in after a
- * client-side fetch.
+ * Kept as the single import every page uses for the navbar. It no longer looks
+ * up the session on the server: doing so (it reads cookies) forced every page
+ * into dynamic rendering. The (client) Navbar now resolves the signed-in state
+ * in the browser instead, so public pages can be statically generated.
  */
-export default async function NavbarServer() {
-  const supabase = await createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-
-  const name =
-    (user?.user_metadata?.full_name as string | undefined) ??
-    (user?.user_metadata?.name as string | undefined) ??
-    null;
-
-  return <Navbar user={user ? { email: user.email ?? null, name } : null} />;
+export default function NavbarServer() {
+  return <Navbar />;
 }

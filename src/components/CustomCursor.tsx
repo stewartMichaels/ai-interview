@@ -29,9 +29,24 @@ export default function CustomCursor() {
     if (!fine || reduced) return;
     setEnabled(true);
 
+    // The easing loop only runs while the ring is still catching up to the
+    // pointer; once it has settled it stops, so an idle cursor costs nothing.
+    const tick = () => {
+      eased.current.x += (raw.current.x - eased.current.x) * 0.18;
+      eased.current.y += (raw.current.y - eased.current.y) * 0.18;
+      if (ringRef.current) {
+        ringRef.current.style.transform = `translate3d(${eased.current.x}px, ${eased.current.y}px, 0)`;
+      }
+      const settled =
+        Math.abs(raw.current.x - eased.current.x) < 0.1 &&
+        Math.abs(raw.current.y - eased.current.y) < 0.1;
+      frame.current = settled ? null : requestAnimationFrame(tick);
+    };
+
     const onMove = (e: MouseEvent) => {
       raw.current = { x: e.clientX, y: e.clientY };
       if (!visible) setVisible(true);
+      if (frame.current === null) frame.current = requestAnimationFrame(tick);
 
       const target = e.target as HTMLElement;
       const upTarget = target.closest('[data-cursor="up"]');
@@ -51,22 +66,12 @@ export default function CustomCursor() {
     document.addEventListener("mouseenter", onEnter);
     document.documentElement.classList.add("custom-cursor-active");
 
-    const tick = () => {
-      eased.current.x += (raw.current.x - eased.current.x) * 0.18;
-      eased.current.y += (raw.current.y - eased.current.y) * 0.18;
-      if (ringRef.current) {
-        ringRef.current.style.transform = `translate3d(${eased.current.x}px, ${eased.current.y}px, 0)`;
-      }
-      frame.current = requestAnimationFrame(tick);
-    };
-    frame.current = requestAnimationFrame(tick);
-
     return () => {
       window.removeEventListener("mousemove", onMove);
       document.removeEventListener("mouseleave", onLeave);
       document.removeEventListener("mouseenter", onEnter);
       document.documentElement.classList.remove("custom-cursor-active");
-      if (frame.current) cancelAnimationFrame(frame.current);
+      if (frame.current !== null) cancelAnimationFrame(frame.current);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);

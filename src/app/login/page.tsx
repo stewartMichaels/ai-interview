@@ -1,12 +1,15 @@
 import Navbar from "@/components/NavbarServer";
 import Footer from "@/components/Footer";
 import AuthForm from "@/components/AuthForm";
+import { pageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Log in — StandIn",
+export const metadata: Metadata = pageMetadata({
+  title: "Log in | StandIn",
   description: "Log in to your StandIn account.",
-};
+  path: "/login",
+  noindex: true,
+});
 
 export default async function LoginPage({
   searchParams,
@@ -23,9 +26,9 @@ export default async function LoginPage({
             <p className="text-sm font-semibold uppercase tracking-widest text-indigo-600">
               Welcome back
             </p>
-            <p className="mt-3 text-3xl font-semibold tracking-tight text-zinc-900">
+            <h1 className="mt-3 text-3xl font-semibold tracking-tight text-zinc-900">
               Log in to StandIn
-            </p>
+            </h1>
           </div>
           <AuthForm mode="login" next={next ?? "/"} />
         </div>

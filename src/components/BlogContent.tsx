@@ -1,3 +1,5 @@
+import InlineText from "./InlineText";
+
 type Block =
   | { type: "h2"; text: string }
   | { type: "ul"; items: string[] }
@@ -35,21 +37,6 @@ function parse(content: string): Block[] {
   return blocks;
 }
 
-/** Renders `**bold**` inline segments within an otherwise plain-text line. */
-function renderInline(text: string) {
-  const parts = text.split(/(\*\*[^*]+\*\*)/g);
-  return parts.map((part, i) => {
-    if (part.startsWith("**") && part.endsWith("**")) {
-      return (
-        <strong key={i} className="font-semibold text-zinc-900">
-          {part.slice(2, -2)}
-        </strong>
-      );
-    }
-    return <span key={i}>{part}</span>;
-  });
-}
-
 export default function BlogContent({ content }: { content: string }) {
   const blocks = parse(content);
 
@@ -72,7 +59,7 @@ export default function BlogContent({ content }: { content: string }) {
               {block.items.map((item, j) => (
                 <li key={j} className="flex gap-2.5 text-sm leading-relaxed text-zinc-600">
                   <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-indigo-400" />
-                  <span>{renderInline(item)}</span>
+                  <span><InlineText text={item} /></span>
                 </li>
               ))}
             </ul>
@@ -80,7 +67,7 @@ export default function BlogContent({ content }: { content: string }) {
         }
         return (
           <p key={i} className="mt-4 text-sm leading-relaxed text-zinc-600">
-            {renderInline(block.text)}
+            <InlineText text={block.text} />
           </p>
         );
       })}

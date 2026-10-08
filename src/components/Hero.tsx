@@ -11,7 +11,7 @@ export default function Hero() {
           its feathered edges fade into the page instead of being cropped. */}
       <HeroVideo
         className="relative mx-auto h-56 w-full max-w-md overflow-hidden sm:h-72 lg:absolute lg:inset-y-0 lg:right-0 lg:mx-0 lg:h-auto lg:w-[55%] lg:max-w-none"
-        videoClassName="h-full w-full object-cover lg:absolute lg:left-1/2 lg:top-1/2 lg:h-auto lg:w-[130%] lg:max-w-none lg:-translate-x-1/2 lg:-translate-y-1/2"
+        mediaClassName="absolute inset-0 h-full w-full object-cover lg:inset-auto lg:left-1/2 lg:top-1/2 lg:h-auto lg:w-[130%] lg:max-w-none lg:-translate-x-1/2 lg:-translate-y-1/2"
       />
 
       <div className="relative z-10 mx-auto max-w-6xl px-6 pb-16 pt-2 sm:pt-4 lg:flex lg:min-h-[640px] lg:items-center lg:pb-24 lg:pt-24">

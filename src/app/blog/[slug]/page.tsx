@@ -4,6 +4,9 @@ import Navbar from "@/components/NavbarServer";
 import Footer from "@/components/Footer";
 import BlogContent from "@/components/BlogContent";
 import CTASection from "@/components/CTASection";
+import JsonLd from "@/components/JsonLd";
+import { SITE_URL } from "@/lib/site";
+import { pageMetadata } from "@/lib/seo";
 import { getAllPosts, getPostBySlug } from "@/lib/blog";
 import type { Metadata } from "next";
 
@@ -20,17 +23,13 @@ export async function generateMetadata({
   const post = getPostBySlug(slug);
   if (!post) return {};
 
-  return {
+  return pageMetadata({
     title: `${post.title} | StandIn`,
     description: post.description,
-    alternates: { canonical: `/blog/${post.slug}` },
-    openGraph: {
-      title: post.title,
-      description: post.description,
-      type: "article",
-      publishedTime: post.date,
-    },
-  };
+    path: `/blog/${post.slug}`,
+    type: "article",
+    openGraph: { publishedTime: post.date, modifiedTime: post.date },
+  });
 }
 
 export default async function BlogPostPage({
@@ -42,14 +41,38 @@ export default async function BlogPostPage({
   const post = getPostBySlug(slug);
   if (!post) notFound();
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline: post.title,
-    description: post.description,
-    datePublished: post.date,
-    author: { "@type": "Organization", name: "StandIn" },
+  const url = `${SITE_URL}/blog/${post.slug}`;
+  const organization = {
+    "@type": "Organization",
+    name: "StandIn",
+    url: SITE_URL,
+    logo: { "@type": "ImageObject", url: `${SITE_URL}/logo.png` },
   };
+
+  // Article + breadcrumb structured data. No ratings, prices or reviews.
+  const jsonLd = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: post.title,
+      description: post.description,
+      datePublished: post.date,
+      dateModified: post.date,
+      author: { "@type": "Organization", name: "StandIn", url: SITE_URL },
+      publisher: organization,
+      image: `${SITE_URL}/opengraph-image.png`,
+      mainEntityOfPage: { "@type": "WebPage", "@id": url },
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+        { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE_URL}/blog` },
+        { "@type": "ListItem", position: 3, name: post.title, item: url },
+      ],
+    },
+  ];
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -83,10 +106,7 @@ export default async function BlogPostPage({
             <BlogContent content={post.content} />
           </div>
         </article>
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        <JsonLd data={jsonLd} />
       </main>
       <CTASection />
       <Footer />

@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
+import type { User } from "@supabase/supabase-js";
 import UserMenu, { type MenuUser } from "@/components/UserMenu";
 
 const LINKS = [
@@ -17,9 +18,35 @@ const LINKS = [
 
 type NavbarUser = MenuUser | null;
 
-export default function Navbar({ user = null }: { user?: NavbarUser }) {
+function toNavbarUser(user: User | null | undefined): NavbarUser {
+  if (!user) return null;
+  const meta = user.user_metadata ?? {};
+  return {
+    email: user.email ?? null,
+    name: (meta.full_name as string | undefined) ?? (meta.name as string | undefined) ?? null,
+  };
+}
+
+/**
+ * The signed-in state is read in the browser (not on the server), so every page
+ * that renders this navbar can be built as static HTML and served from the CDN.
+ * `ready` stays false until Supabase reports the initial session, which keeps
+ * the right-hand slot from flashing "Log in" at someone who is already signed in.
+ */
+export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [user, setUser] = useState<NavbarUser>(null);
+  const [ready, setReady] = useState(false);
   const router = useRouter();
+
+  useEffect(() => {
+    const supabase = createClient();
+    const { data } = supabase.auth.onAuthStateChange((_event, session) => {
+      setUser(toNavbarUser(session?.user));
+      setReady(true);
+    });
+    return () => data.subscription.unsubscribe();
+  }, []);
 
   // Close the menu automatically if the viewport is resized past mobile width.
   useEffect(() => {
@@ -57,7 +84,7 @@ export default function Navbar({ user = null }: { user?: NavbarUser }) {
         >
           <Image
             src="/logo.png"
-            alt="StandIn"
+            alt=""
             width={28}
             height={28}
             priority
@@ -76,7 +103,9 @@ export default function Navbar({ user = null }: { user?: NavbarUser }) {
         </nav>
 
         <div className="flex items-center gap-3">
-          {user ? (
+          {!ready ? (
+            <span aria-hidden="true" className="hidden h-9 w-14 sm:block" />
+          ) : user ? (
             <UserMenu user={user} />
           ) : (
             <Link

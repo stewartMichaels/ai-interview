@@ -3,12 +3,15 @@ import Footer from "@/components/Footer";
 import AuthForm from "@/components/AuthForm";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
+import { pageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Sign up — StandIn",
+export const metadata: Metadata = pageMetadata({
+  title: "Sign up | StandIn",
   description: "Create a StandIn account to build your AI representative.",
-};
+  path: "/signup",
+  noindex: true,
+});
 
 export default async function SignupPage() {
   const supabase = await createClient();
@@ -26,9 +29,9 @@ export default async function SignupPage() {
             <p className="text-sm font-semibold uppercase tracking-widest text-indigo-600">
               Get started
             </p>
-            <p className="mt-3 text-3xl font-semibold tracking-tight text-zinc-900">
+            <h1 className="mt-3 text-3xl font-semibold tracking-tight text-zinc-900">
               Create your StandIn account
-            </p>
+            </h1>
           </div>
           <AuthForm mode="signup" />
         </div>

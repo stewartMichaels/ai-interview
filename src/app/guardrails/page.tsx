@@ -2,21 +2,22 @@ import Navbar from "@/components/NavbarServer";
 import Footer from "@/components/Footer";
 import GuardrailsSection from "@/components/GuardrailsSection";
 import CTASection from "@/components/CTASection";
+import { pageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Guardrails — The Best AI Interview Online Stays Grounded | StandIn",
+export const metadata: Metadata = pageMetadata({
+  title: "AI Interview Guardrails: No Made-Up Answers | StandIn",
   description:
-    "No fabricated experience, no invented answers. Learn how StandIn's guardrails keep your AI interview representative grounded strictly in your resume and your own words.",
-  alternates: { canonical: "/guardrails" },
-};
+    "StandIn only answers from your resume and the context you give it. Here is how its guardrails stop invented experience.",
+  path: "/guardrails",
+});
 
 export default function GuardrailsPage() {
   return (
     <div className="flex min-h-screen flex-col">
       <Navbar />
       <main className="flex-1">
-        <GuardrailsSection />
+        <GuardrailsSection headingLevel={1} title="AI interview guardrails: no made-up answers" />
         <CTASection />
       </main>
       <Footer />

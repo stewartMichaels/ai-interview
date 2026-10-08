@@ -4,13 +4,15 @@ import Footer from "@/components/Footer";
 import AccountForm from "@/components/AccountForm";
 import DeleteAccountSection from "@/components/DeleteAccountSection";
 import { createClient } from "@/lib/supabase/server";
+import { pageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Account — StandIn",
+export const metadata: Metadata = pageMetadata({
+  title: "Account | StandIn",
   description: "Manage your StandIn account details.",
-  robots: { index: false, follow: false },
-};
+  path: "/account",
+  noindex: true,
+});
 
 export default async function AccountPage() {
   const supabase = await createClient();
@@ -36,9 +38,9 @@ export default async function AccountPage() {
             <p className="text-sm font-semibold uppercase tracking-widest text-indigo-600">
               Account
             </p>
-            <p className="mt-3 text-3xl font-semibold tracking-tight text-zinc-900">
+            <h1 className="mt-3 text-3xl font-semibold tracking-tight text-zinc-900">
               Your profile
-            </p>
+            </h1>
             <p className="mt-2 text-sm text-zinc-600">
               This is how you&apos;ll appear across StandIn.
             </p>

@@ -2,14 +2,15 @@ import Link from "next/link";
 import Navbar from "@/components/NavbarServer";
 import Footer from "@/components/Footer";
 import { getAllPosts } from "@/lib/blog";
+import { pageMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = {
-  title: "Blog — AI Interview Online Guides & Tips | StandIn",
+export const metadata: Metadata = pageMetadata({
+  title: "AI Interview Guides and Tips for Candidates | StandIn",
   description:
-    "Guides on AI interview applications, what to expect from an AI interview online, and how to choose the best AI interview online platform for your job search.",
-  alternates: { canonical: "/blog" },
-};
+    "Practical guides for candidates facing AI interviewers: what to expect, how to prepare, and how an AI representative can speak for you.",
+  path: "/blog",
+});
 
 export default function BlogIndexPage() {
   const posts = getAllPosts();
@@ -24,12 +25,11 @@ export default function BlogIndexPage() {
               Blog
             </h1>
             <p className="mt-3 text-3xl font-semibold tracking-tight text-zinc-900 sm:text-4xl">
-              The AI interview online, explained
+              AI interview guides for candidates
             </p>
             <p className="mt-4 text-zinc-600">
-              Practical guides on AI interview applications, what to expect from an AI
-              interview online, and how to find the best AI interview online platform for
-              your search.
+              Practical guides on handling AI interviewers, preparing for one-way video
+              interviews, and comparing the AI tools available to candidates.
             </p>
           </div>
 

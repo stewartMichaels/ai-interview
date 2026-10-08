@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
 import CustomCursor from "@/components/CustomCursor";
-
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? "https://stand-in-six.vercel.app";
+import JsonLd from "@/components/JsonLd";
+import { SITE_URL } from "@/lib/site";
+import { HOME_DESCRIPTION, HOME_TITLE, SITE_NAME } from "@/lib/seo";
 // Google Ads conversion ID(s) — the "AW-..." tag(s). Supports more than one
 // account reporting on the same site: set a comma-separated list (e.g.
 // "AW-18413726756,AW-99887766"), one per advertiser. Google's own multi-tag
@@ -20,29 +21,55 @@ const GOOGLE_ADS_IDS = (process.env.NEXT_PUBLIC_GOOGLE_ADS_IDS ?? "")
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "StandIn — The Best AI Interview Online, Grounded in Your Own Words",
+    default: HOME_TITLE,
     template: "%s",
   },
-  description:
-    "AI interviewers grade rigid formats and mis-transcribe your answers. StandIn is an AI interview application that builds a phone-callable AI representative from your resume and your own words, with strict guardrails against hallucination.",
-  keywords: [
-    "AI Interview Application",
-    "Best AI Interview Online",
-    "AI Interview Online",
-  ],
+  description: HOME_DESCRIPTION,
+  alternates: { canonical: "/" },
   openGraph: {
-    title: "StandIn — The Best AI Interview Online, Grounded in Your Own Words",
-    description:
-      "Build a phone-callable AI representative from your resume and your own words — grounded strictly in what you provide.",
-    siteName: "StandIn",
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
+    url: "/",
+    siteName: SITE_NAME,
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "StandIn — The Best AI Interview Online, Grounded in Your Own Words",
-    description:
-      "Build a phone-callable AI representative from your resume and your own words — grounded strictly in what you provide.",
+    title: HOME_TITLE,
+    description: HOME_DESCRIPTION,
   },
+};
+
+// Site-wide structured data: who StandIn is, the website, and the product.
+// Deliberately no prices, ratings or reviews — there are none to report.
+const SITE_JSON_LD = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
+      name: SITE_NAME,
+      url: SITE_URL,
+      logo: `${SITE_URL}/logo.png`,
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      name: SITE_NAME,
+      url: SITE_URL,
+      publisher: { "@id": `${SITE_URL}/#organization` },
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": `${SITE_URL}/#software`,
+      name: SITE_NAME,
+      url: SITE_URL,
+      applicationCategory: "BusinessApplication",
+      operatingSystem: "Web",
+      description: HOME_DESCRIPTION,
+      publisher: { "@id": `${SITE_URL}/#organization` },
+    },
+  ],
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -52,6 +79,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         className="min-h-full flex flex-col bg-white text-zinc-900"
         suppressHydrationWarning
       >
+        <JsonLd data={SITE_JSON_LD} />
         {GOOGLE_ADS_IDS.length > 0 && (
           <>
             <Script

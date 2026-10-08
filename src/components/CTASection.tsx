@@ -24,7 +24,7 @@ export default function CTASection() {
           {/* Continuance: positive, concrete reassurance sitting right next to the
               button — nothing hedging or negative this close to the CTA. */}
           <p className="text-xs text-zinc-500">
-            Step 1 of 4 is just uploading your resume &middot; you approve everything
+            Step 1 of 3 is just uploading your resume and sharing your own words &middot; you approve everything
             before it&apos;s shareable
           </p>
         </div>

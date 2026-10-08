@@ -3,7 +3,7 @@ export type BlogPost = {
   title: string;
   /** Meta description — kept under ~160 chars and built around the target keyword. */
   description: string;
-  /** Primary keyword this post targets. */
+  /** Primary search topic this post targets (each post has a distinct one). */
   keyword: string;
   date: string; // ISO date
   readingTime: string;
@@ -19,156 +19,181 @@ export type BlogPost = {
 export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "ai-interview-application-guide",
-    title: "AI Interview Application: The Complete Guide for Job Seekers (2026)",
+    title: "How to Handle an AI Job Interview",
     description:
-      "What an AI interview application actually is, how it screens you, and how to use one — or build your own — without losing your voice to a rigid format.",
-    keyword: "AI Interview Application",
+      "A step-by-step guide to AI job interviews: formats like STAR and CAR, common mistakes, and how StandIn can help.",
+    keyword: "AI job interview",
     date: "2026-08-10",
-    readingTime: "7 min read",
+    readingTime: "3 min read",
     content: `
-An AI interview application is any tool that conducts, screens, or represents a candidate in a hiring conversation using artificial intelligence instead of a human recruiter on the other end of the line. In 2026, most job seekers will run into one before they ever speak to a person — either as the candidate answering an AI interviewer, or, increasingly, as the one sending an AI representative of their own into that first screening call.
+An AI job interview is a screening conversation where software, not a recruiter, asks the questions, records your answers, and often scores them. More candidates now meet one before they ever speak to a person. This guide walks through how to handle it step by step, from finding out the format to what to do afterward.
 
-## Why AI interview applications exist
+## Step 1: Find out what format you are facing
 
-Recruiting teams adopted AI interview applications to solve a volume problem: too many applicants, not enough recruiter hours to have a first conversation with each one. An AI interview application can run hundreds of structured first-round calls in parallel, transcribe them, score them against a rubric, and hand a recruiter a shortlist by morning.
+Not every AI interview works the same way. Some are live phone or video calls with a voice model, and some are recorded one-way interviews where you answer prompts on your own. Check the invitation, or ask the recruiter, how long it runs, whether you can retake an answer, and whether a human will review the recording. If your invitation describes recorded answers, read our [one-way video interview tips](/blog/ai-interview-online-what-to-expect) first.
 
-That solved the company's problem. It created a new one for candidates.
+## Step 2: Learn the answer formats, STAR and CAR
 
-## The candidate-side problem with most AI interview applications
+Many AI interviewers are built around structured answer formats. **STAR** stands for Situation, Task, Action, Result. **CAR** is a shorter cousin: challenge, action, result. Both are useful for behavioral questions such as "tell me about a time you led a project."
 
-- Rigid formats: many AI interviewers push every answer into STAR or CAR structure, even for questions that don't call for it, penalizing candidates who communicate naturally.
-- Transcription errors: speech-to-text drops technical terms, names, and nuance — and the model scores the garbled transcript, not what you actually said.
-- No read on context: tone, hesitation, and follow-up nuance get flattened into a single rubric pass.
-- A trust gap: candidates increasingly don't know whether the "interviewer" is grading their story or grading their ability to perform a template.
+The mistake is forcing a format onto a question that does not need it. If you are asked a direct factual question, answer it first in a sentence, then add structure only if the question calls for it.
 
-## The other kind of AI interview application: one that represents you
+## Step 3: Prepare your facts and numbers
 
-A newer category flips the model. Instead of an AI interviewing the candidate, the candidate builds an AI interview application that represents them — trained strictly on their resume and their own words, then made available as a shareable, phone-callable link for a recruiter's first screening pass.
+AI interviewers score what you say, so specifics matter. Before the call, write down your roles and dates, two or three projects with a measurable result each, and the names of any tools or products you will mention. Say numbers and proper nouns clearly and slowly. They are the words most likely to be mis-transcribed.
 
-This is the approach StandIn takes. You upload your resume, answer a set of guided prompts in your own voice, review exactly what your AI representative will and won't say, and then share one link. When a recruiter calls it, they get a conversation grounded in what you actually provided — not a hallucinated résumé, and not a transcript mangled by weak speech-to-text on their end.
+## Step 4: Speak so the transcript gets it right
 
-## What to look for in an AI interview application, either side of the table
+- Use complete sentences instead of trailing off.
+- Pause briefly between answers so speech-to-text can catch up.
+- Spell out an unusual name or term once if it is central to your answer.
+- Do not rush to get through it. Speaking faster usually makes transcription worse, not better.
 
-- **Grounding, not generation.** Answers should be retrieved from your own material, with an explicit "I don't have that information" fallback rather than a guess.
-- **Guardrails you control.** You should be able to mark topics off-limits and preview sample answers before anything goes live.
-- **A full transcript.** Every call should be logged and available afterward, so nothing said on your behalf is a mystery.
-- **Clear disclosure.** Recruiters should always know they're speaking with an AI representative, not a human pretending otherwise.
+## Common mistakes to avoid
 
-## Getting started
+- Memorizing a script and reciting it in a flat voice.
+- Burying the answer under three minutes of setup.
+- Treating the call as a form instead of a conversation.
+- Never asking whether you can see a transcript or get feedback afterward.
 
-If you're evaluating an AI interview application as a candidate, treat the resume-upload and guardrail-review steps as the most important part of the process — that's where you decide what your representative is allowed to say. A good platform makes this step thorough, not an afterthought squeezed in before your first shareable link goes live.
+## Step 5: Ask what happens next
+
+Ask who sees your answers, whether a human reviews the result, and when you will hear back. If a transcript is available, read it. A mis-heard word is much easier to correct early than after a decision has been made.
+
+## Another option: send an AI representative
+
+A newer approach is to skip being interviewed by an AI interviewer and send an AI that already knows you. With StandIn, you upload your resume, answer guided prompts in your own words, review every guardrail, and share a link. A recruiter calls it like a phone interview and gets answers grounded in what you provided, with a full transcript delivered to you afterward. See [how it works](/how-it-works), the [guardrails](/guardrails) that keep it honest, or hear the [sample call](/demo).
+
+If you are weighing your options, our comparison of [AI interview tools for candidates](/blog/best-ai-interview-online) lays out the main categories side by side.
 `,
   },
   {
     slug: "best-ai-interview-online",
-    title: "Best AI Interview Online: How to Choose the Right Platform",
+    title: "AI Interview Tools for Candidates, Compared",
     description:
-      "A practical checklist for picking the best AI interview online platform in 2026 — what separates a trustworthy grounded tool from one that fabricates answers.",
-    keyword: "Best AI Interview Online",
+      "A comparison of AI interview tools from the candidate's side: practice apps, assistants, and AI representatives.",
+    keyword: "AI interview tools",
     date: "2026-08-17",
-    readingTime: "6 min read",
+    readingTime: "3 min read",
     content: `
-Searching for the best AI interview online tool turns up two very different categories of product: platforms that use AI to interview candidates, and platforms that build an AI representative for a candidate to send into that interview. Picking the right one — and the right platform within that category — depends on which side of the hiring table you're solving for.
+Search for AI interview tools and you will find two very different groups of products: tools companies use to interview you, and tools you can use yourself. This comparison covers the second group, from the candidate's side. It sorts them into three categories and gives you a checklist for judging any of them.
 
-## Start with what you're actually trying to fix
+## The three kinds of AI interview tools for candidates
 
-If you're a candidate tired of being screened by a rigid AI interviewer that mis-transcribes your answers and forces every response into a template, the "best" tool for you isn't another interviewer bot — it's one that lets you build your own grounded AI representative and hand recruiters a link instead of sitting through another frustrating call.
+- **Practice apps.** You rehearse with a simulated interviewer and get feedback on your answers, pacing, or delivery. They build your skill but do not change the interview you will actually face.
+- **AI assistants.** General-purpose or interview-specific assistants that help you prepare: researching a company, outlining answers, or turning your experience into talking points. You still sit through the AI interviewer yourself.
+- **AI representatives.** You build an AI that speaks for you on a recruiter's first screening call, trained on your own resume and words. StandIn is in this category. It changes who is on the call, but only for that first pass.
 
-## The checklist that actually separates good platforms from bad ones
+## How to compare them
 
-- **Does it hallucinate?** The single biggest risk with any AI interview online tool is fabrication — a representative that invents a title, a metric, or a project you never had. The best AI interview online platforms retrieve answers strictly from source material you provided and refuse to guess.
-- **Can you review it before it goes live?** You should get to preview sample answers and lock down sensitive topics before your link is ever shareable, not discover what it says about you after a recruiter already has.
-- **Is there a full transcript?** Every call should be logged, so you always know exactly what was said on your behalf — this is non-negotiable if the tool is representing you.
-- **Is the setup actually fast?** A good platform gets you from resume upload to a shareable link in minutes, not hours of manual configuration.
-- **Is disclosure built in?** Recruiters should be told upfront they're speaking to an AI representative. A platform that tries to pass the AI off as you erodes exactly the trust it should be building.
+Whichever category you are looking at, the same questions separate trustworthy tools from risky ones:
 
-## Why "best" depends on grounding, not polish
+- **Does it make things up?** The biggest risk with any AI tool is fabrication: a title, metric, or project you never had. Look for answers drawn strictly from material you provided, with an honest "I don't have that" fallback.
+- **Can you review it before it matters?** You should be able to preview answers and set limits before anything reaches a recruiter.
+- **Do you get a transcript?** If a tool speaks or records on your behalf, you should be able to read exactly what was said.
+- **Is disclosure built in?** A recruiter should know they are speaking with an AI. Tools that pass AI off as you erode trust.
+- **How fast is setup?** Hours of configuration is a real cost when you are applying to many roles.
 
-It's easy to judge an AI interview online tool by how natural its voice sounds. That's the wrong first filter. A smooth-sounding representative that quietly fabricates a detail is worse than a slightly stiffer one that says "I don't have that information" when asked something outside your provided material. Grounding is the feature that actually protects you.
+## The trade-offs, honestly
+
+Practice apps help you perform better under pressure, but a better-rehearsed answer can still be mis-scored by a rigid format. Assistants save preparation time, but they leave the live AI interviewer unchanged. Representatives remove the format problem for the first call, but they only work where a recruiter is willing to call your link, and they cover the screening pass, not the whole process.
 
 ## Where StandIn fits
 
-StandIn was built specifically around that grounding requirement: your resume and your own words are the only source of truth, hard constraints stop the model from inventing experience, and you approve every guardrail — including which topics are off-limits — before your link goes live. Every call is transcribed and handed back to you afterward.
+StandIn is built around the grounding requirement: your resume and your own words are the only source, hard constraints stop it from inventing experience, and you approve every guardrail before your link goes live. StandIn is our product, so weigh this section accordingly and judge it against the same checklist above. You can see [how it works](/how-it-works), read about the [guardrails](/guardrails), or hear the [sample call](/demo) before deciding.
 
 ## A quick decision guide
 
-- Screening candidates at volume, need structured signal fast → an AI-interviewer platform with strong anti-bias auditing.
-- Tired of performing for a rigid AI interviewer's format and want your first screening call to actually reflect you → build an AI representative on a grounded platform like StandIn instead.
+- Nervous about performing on camera or on the phone → start with a practice app.
+- Need help turning your experience into clear answers → try an assistant for preparation.
+- Tired of being scored by a rigid AI interviewer and want the first screening call to reflect you → look at an AI representative.
+
+If you do end up facing an AI interviewer, our guide to [handling an AI job interview](/blog/ai-interview-application-guide) covers what to do on the day.
 `,
   },
   {
     slug: "ai-interview-online-what-to-expect",
-    title: "AI Interview Online: What to Expect and How to Prepare",
+    title: "One-Way Video Interview Tips: What to Expect",
     description:
-      "What actually happens during an AI interview online, common pitfalls candidates run into, and how to prepare — including sending your own AI representative instead.",
-    keyword: "AI Interview Online",
+      "What happens in a one-way AI video interview, how it is scored, and practical tips to prepare.",
+    keyword: "one-way video interview",
     date: "2026-08-24",
-    readingTime: "6 min read",
+    readingTime: "3 min read",
     content: `
-If a recruiter has told you your next step is an AI interview online, here's what that usually means in practice, what tends to go wrong for candidates, and the preparation that actually helps.
+A one-way video interview, sometimes called an asynchronous interview, has no live interviewer. Questions appear on your screen, you record your answers on your own, and the recording is reviewed later. Here is what to expect, how responses are commonly reviewed, and how to prepare.
 
-## What an AI interview online usually looks like
+## What a one-way video interview looks like
 
-Most AI interview online formats are phone or video calls where a voice model asks you a fixed or semi-adaptive set of questions, transcribes your responses in real time, and scores the transcript against a rubric — sometimes with no human reviewing the raw recording at all. You're often nudged toward specific answer formats like STAR (Situation, Task, Action, Result), regardless of whether the question actually calls for that structure.
+You usually get a link, open it in a browser, and allow camera and microphone access. Each question appears as text or a short recorded prompt. Many platforms give you a short window to think and a time limit to answer. Whether you can retake an answer varies by platform, so read the instructions before you start.
+
+## How your answers are reviewed
+
+Depending on the employer, your recording may be watched by a recruiter, transcribed and scored by software, or both. The invitation should say which. If it does not, it is reasonable to ask. Where software scoring is involved, the transcript, not your delivery, is what gets scored, which is why clear speech matters so much.
 
 ## Where candidates get tripped up
 
-- **Over-formatting.** Forcing every answer into STAR even for a simple factual question wastes time and can read as evasive rather than structured.
-- **Transcription drift.** Technical terms, product names, and numbers are the most common casualties of speech-to-text — "scaled" becomes "failed," a team name gets garbled, and the model scores the error.
-- **No room for follow-up nuance.** Unlike a human interviewer, most AI interview online tools won't catch a hesitation and ask a clarifying question — they score what's on the transcript, period.
-- **Uncertainty about disclosure.** Candidates often aren't sure how much the AI is actually evaluating versus just relaying to a human later, which makes it hard to calibrate how much to explain.
+- **Over-formatting.** Forcing every answer into STAR (Situation, Task, Action, Result), even for a simple factual question, wastes your limited time and can read as evasive.
+- **Transcription drift.** Technical terms, product names, and numbers are the most common casualties of speech-to-text. "Scaled" becomes "failed," and the scoring reflects the error.
+- **No follow-up.** A live interviewer would catch a hesitation and ask a clarifying question. A recording will not, so you have to be complete the first time.
+- **Technical trouble.** Poor lighting, background noise, and a weak connection are the easiest problems to avoid and the most common.
 
-## How to prepare
+## Tips to prepare
 
-- **Speak in complete sentences and name specifics clearly** — say numbers and proper nouns slowly and distinctly, since that's exactly where transcription tends to fail.
-- **Answer the question that was asked before adding structure.** Lead with a direct answer, then elaborate — don't force a four-part framework onto a one-line question.
-- **Ask (or check beforehand) whether a transcript will be made available to you.** If it is, review it — you may be able to flag transcription errors before a human makes a decision based on them.
-- **Treat it like a real interview, not a form.** The instinct to speak faster or more mechanically to "get through" an AI call usually makes transcription and scoring worse, not better.
+- **Test your setup.** Check your camera, microphone, and connection a day ahead, and sit somewhere quiet with the light in front of you.
+- **Answer first, structure second.** Lead with a direct answer, then add the supporting detail. Use a format like STAR only when the question asks for a story.
+- **Say specifics clearly.** Slow down on numbers, names, and technical terms.
+- **Watch the timer.** Practice giving a complete answer in the time allowed, so you are not cut off mid-sentence.
+- **Look at the camera.** It is not natural, but it is how eye contact reads on the other end.
+- **Keep notes out of sight.** A few key facts nearby help. Reading a script aloud does not.
 
-## The alternative: sending an AI that already knows you
+## After you submit
 
-An increasingly common option is to skip being interviewed by an AI at all, and instead send an AI representative that already knows your resume and your own words — built and approved by you ahead of time. StandIn works this way: you upload your resume, answer prompts in your own voice, review every guardrail, and share a link. When a recruiter calls it, the conversation is grounded strictly in what you provided, with a full transcript delivered back to you afterward.
+Ask whether a transcript or feedback is available. If it is, review it. For a broader checklist, see our guide to [handling an AI job interview](/blog/ai-interview-application-guide).
 
-That doesn't remove AI from the process — it just moves the AI to your side of the call, where you controlled what it knows and how it's allowed to answer.
+## An alternative: sending an AI that already knows you
+
+StandIn does not take recorded one-way video interviews for you. It is built for phone screening calls, where a recruiter calls a link and talks with an AI representative you built from your own resume and words, grounded strictly in what you provided. If you would rather not perform for an AI interviewer at all, read [how it works](/how-it-works), the [guardrails](/guardrails) behind it, or hear the [sample call](/demo). And to see how this kind of tool compares with others, read our roundup of [AI interview tools for candidates](/blog/best-ai-interview-online).
 `,
   },
   {
     slug: "why-ai-interviewers-get-you-wrong",
-    title: "Why AI Interviewers Get You Wrong (And What Actually Fixes It)",
+    title: "Why AI Interviewers Get You Wrong",
     description:
-      "AI interview online screening keeps mis-transcribing and mis-scoring candidates. Here's why it happens and what a grounded AI interview application changes.",
-    keyword: "AI Interview Online",
+      "Rigid formats and bad transcription cost good candidates. What goes wrong in AI interviews, and what you can do about it.",
+    keyword: "AI interviewer",
     date: "2026-09-01",
-    readingTime: "5 min read",
+    readingTime: "3 min read",
     content: `
-Scroll LinkedIn, Reddit, or TikTok for more than a few minutes and you'll find a candidate describing the same frustration: an AI interview online screening that mis-transcribed their answer, scored the wrong word, or docked them for not following a format the question never called for. This isn't a handful of isolated bad experiences — it's become a recurring, visible pattern in how people talk about job hunting in 2026.
+Scroll LinkedIn, Reddit, or TikTok for more than a few minutes and you will find a candidate describing the same frustration: an AI interview that mis-transcribed their answer, scored the wrong word, or docked them for not following a format the question never called for. This is not a handful of isolated bad experiences. It has become a recurring, visible pattern in how people talk about job hunting.
 
 ## Two separate failures, often confused as one
 
-It helps to separate what's actually going wrong:
+It helps to separate what is actually going wrong:
 
-- **Transcription failure** — speech-to-text drops or misreads a word (a classic case: "scaled" heard as "failed"), and the scoring model then evaluates the garbled text instead of what was actually said.
-- **Format failure** — the interviewer pushes every answer into a rigid structure like STAR, even for questions that don't need it, and penalizes candidates who answer naturally and directly instead.
+- **Transcription failure.** Speech-to-text drops or misreads a word (a classic case: "scaled" heard as "failed"), and the scoring model then evaluates the garbled text instead of what you said.
+- **Format failure.** The AI interviewer pushes every answer into a rigid structure like STAR, even for questions that do not need it, and penalizes candidates who answer naturally and directly.
 
 Both failures share a root cause: the system is optimizing for a clean, structured transcript to score, not for an accurate read of the candidate.
 
-## Why this became a trust problem, not just a UX complaint
+## Why this became a trust problem, not just a usability complaint
 
-The public discourse isn't really about disliking talking to a bot. It's about not trusting that the bot's summary of the conversation is accurate — and having no visibility into what was actually recorded and scored on your behalf. When there's no transcript handed back to you, a mis-transcription is invisible until you're already rejected.
+The public discussion is not really about disliking talking to a bot. It is about not trusting that the bot's summary of the conversation is accurate, and having no visibility into what was recorded and scored on your behalf. When no transcript is handed back to you, a mis-transcription stays invisible until you have already been rejected.
 
 ## What actually fixes it
 
-The fix isn't a better-sounding voice model on the interviewer's end — it's changing who controls the source material the AI is working from, and making that process visible to the candidate:
+The fix is not a better-sounding voice on the interviewer's end. It is changing who controls the source material the AI works from, and making the process visible to the candidate:
 
 - **Grounding.** Answers should come only from material the candidate explicitly provided, with an honest "I don't have that information" instead of a guess.
 - **Guardrails set by the candidate, not just the platform.** The person being represented should be able to mark topics off-limits and see sample answers before anything is shared.
-- **A transcript delivered every time.** Not held internally by the platform — actually given to the person whose interview it was.
+- **A transcript delivered every time.** Not held internally by the platform, but actually given to the person whose interview it was.
 
 ## How StandIn approaches this
 
-StandIn takes the model of "AI interviews candidate" and inverts it: you build an AI representative from your own resume and your own words, review every guardrail and sample answer before your link goes live, and get a full transcript after every call a recruiter makes to it. The AI representing you only knows what you told it — nothing is generated to fill a gap.
+StandIn inverts the usual model. Instead of an AI interviewing you, you build an AI representative from your own resume and words, review every guardrail and sample answer before your link goes live, and receive a full transcript after every call a recruiter makes to it. The AI representing you only knows what you told it, so nothing is generated to fill a gap. You can read the details in [how it works](/how-it-works) and the [guardrails](/guardrails) page, or hear the [sample call](/demo).
 
-That doesn't eliminate AI from the hiring funnel. It puts the candidate in control of what the AI is allowed to say, instead of leaving that entirely to whichever platform the employer picked.
+That does not remove AI from hiring. It puts you in control of what the AI on your side is allowed to say.
+
+If you are preparing for an AI interviewer right now, our step-by-step guide to [handling an AI job interview](/blog/ai-interview-application-guide) covers what to do before, during, and after.
 `,
   },
 ];
