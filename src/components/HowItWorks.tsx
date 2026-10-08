@@ -30,12 +30,12 @@ export default function HowItWorks() {
     <section id="how-it-works" className="border-b border-zinc-900/10 bg-white">
       <div className="mx-auto max-w-6xl px-6 py-24">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-sm font-semibold uppercase tracking-widest text-indigo-600">
+          <p className="text-sm font-semibold uppercase tracking-widest text-indigo-600">
             The fix
-          </h2>
-          <p className="mt-3 text-3xl font-semibold tracking-tight text-zinc-900 sm:text-4xl">
-            From resume to shareable call in four steps
           </p>
+          <h1 className="mt-3 text-3xl font-semibold tracking-tight text-zinc-900 sm:text-4xl">
+            From resume to shareable call in four steps
+          </h1>
           <p className="mt-4 text-zinc-600">
             No format to perform for, no transcript to fight — just your own
             experience, in your own words, ready whenever a recruiter calls.

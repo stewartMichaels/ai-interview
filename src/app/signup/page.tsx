@@ -8,6 +8,8 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Sign up — StandIn",
   description: "Create a StandIn account to build your AI representative.",
+  // Nothing to rank for here; keep it out of the index but let links be followed.
+  robots: { index: false, follow: true },
 };
 
 export default async function SignupPage() {
@@ -26,9 +28,9 @@ export default async function SignupPage() {
             <p className="text-sm font-semibold uppercase tracking-widest text-indigo-600">
               Get started
             </p>
-            <p className="mt-3 text-3xl font-semibold tracking-tight text-zinc-900">
+            <h1 className="mt-3 text-3xl font-semibold tracking-tight text-zinc-900">
               Create your StandIn account
-            </p>
+            </h1>
           </div>
           <AuthForm mode="signup" />
         </div>

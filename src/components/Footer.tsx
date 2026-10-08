@@ -9,7 +9,7 @@ export default function Footer() {
           <div className="group flex items-center gap-2 text-sm text-zinc-500">
             <Image
               src="/logo.png"
-              alt="StandIn"
+              alt=""
               width={24}
               height={24}
               className="h-6 w-6 transition-transform duration-300 ease-out group-hover:-translate-y-0.5 group-hover:rotate-12 group-hover:scale-110"

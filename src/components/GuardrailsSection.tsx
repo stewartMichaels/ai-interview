@@ -27,12 +27,12 @@ export default function GuardrailsSection() {
       <div className="mx-auto max-w-6xl px-6 py-24">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-20">
           <div>
-            <h2 className="text-sm font-semibold uppercase tracking-widest text-indigo-600">
+            <p className="text-sm font-semibold uppercase tracking-widest text-indigo-600">
               Guardrails
-            </h2>
-            <p className="mt-3 text-3xl font-semibold tracking-tight text-zinc-900 sm:text-4xl">
-              It only knows what you told it. Nothing more.
             </p>
+            <h1 className="mt-3 text-3xl font-semibold tracking-tight text-zinc-900 sm:text-4xl">
+              It only knows what you told it. Nothing more.
+            </h1>
             <p className="mt-4 text-zinc-600">
               The whole point is trust in the other direction too: recruiters need
               confidence that your AI representative isn&apos;t embellishing, and you need

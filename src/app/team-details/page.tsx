@@ -2,11 +2,13 @@ import Navbar from "@/components/NavbarServer";
 import Footer from "@/components/Footer";
 import TeamAvatar from "@/components/TeamAvatar";
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Team Details — StandIn",
   description: "The team behind the StandIn concept project.",
-};
+  path: "/team-details",
+});
 
 type Member = {
   name: string;
@@ -34,12 +36,12 @@ export default function TeamDetailsPage() {
       <main className="flex-1 bg-grid bg-glow border-b border-zinc-900/10">
         <div className="mx-auto max-w-6xl px-6 py-20">
           <div className="mx-auto max-w-2xl text-center">
-            <h1 className="text-sm font-semibold uppercase tracking-widest text-indigo-600">
+            <p className="text-sm font-semibold uppercase tracking-widest text-indigo-600">
               Group 8
-            </h1>
-            <p className="mt-3 text-3xl font-semibold tracking-tight text-zinc-900 sm:text-4xl">
-              Team Details
             </p>
+            <h1 className="mt-3 text-3xl font-semibold tracking-tight text-zinc-900 sm:text-4xl">
+              Team Details
+            </h1>
             <p className="mt-4 text-zinc-600">
               The team behind the StandIn concept project.
             </p>

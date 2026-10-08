@@ -56,12 +56,14 @@ export default function HeroVideo({
         muted
         loop
         playsInline
-        preload="auto"
-        poster="/hero-poster.jpg"
+        preload="metadata"
+        poster="/hero-poster.webp"
         tabIndex={-1}
       >
-        <source src="/hero-loop.mp4" type="video/mp4" />
+        {/* WebM first: browsers take the first source they can play, and the
+            WebM is under half the size of the MP4 (which stays as the fallback). */}
         <source src="/hero-loop.webm" type="video/webm" />
+        <source src="/hero-loop.mp4" type="video/mp4" />
       </video>
     </div>
   );
