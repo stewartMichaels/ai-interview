@@ -30,7 +30,7 @@ export default async function LoginPage({
               Log in to StandIn
             </h1>
           </div>
-          <AuthForm mode="login" next={next ?? "/"} />
+          <AuthForm mode="login" next={next ?? "/upload"} />
         </div>
       </main>
       <Footer />

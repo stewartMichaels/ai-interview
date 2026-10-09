@@ -18,7 +18,7 @@ export default async function SignupPage() {
   const {
     data: { user },
   } = await supabase.auth.getUser();
-  if (user) redirect("/account");
+  if (user) redirect("/upload");
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -33,7 +33,7 @@ export default async function SignupPage() {
               Create your StandIn account
             </h1>
           </div>
-          <AuthForm mode="signup" />
+          <AuthForm mode="signup" next="/upload" />
         </div>
       </main>
       <Footer />
