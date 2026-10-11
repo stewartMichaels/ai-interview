@@ -1,6 +1,5 @@
 import Link from "next/link";
 import HeroVideo from "./HeroVideo";
-import SampleCallLink from "./SampleCallLink";
 
 export default function Hero() {
   return (
@@ -33,13 +32,12 @@ export default function Hero() {
 
           <p className="mt-6 max-w-2xl text-balance text-lg leading-relaxed text-zinc-600">
             StandIn turns your resume and your own words into a phone-callable AI
-            representative — grounded strictly in what you tell it, so a recruiter's
+            representative — grounded strictly in what you tell it, so a recruiter&apos;s
             first screening call finally reflects who you are, not how well you
             performed for a bot.
           </p>
 
-          {/* Closing: one primary action, one de-emphasized secondary link — never
-              two competing buttons. */}
+          {/* Closing: a single action, so the visitor has nothing to weigh up. */}
           <div className="mt-10 flex flex-col items-center gap-3 sm:flex-row lg:items-center">
             <Link
               href="/signup"
@@ -47,9 +45,6 @@ export default function Hero() {
             >
               Build your AI representative — free
             </Link>
-            <SampleCallLink className="text-sm font-medium text-zinc-700 underline decoration-zinc-900/20 underline-offset-4 transition-colors hover:text-zinc-900">
-              or listen to a sample call →
-            </SampleCallLink>
           </div>
 
           {/* Continuance: tells the visitor exactly what happens right after they click. */}
